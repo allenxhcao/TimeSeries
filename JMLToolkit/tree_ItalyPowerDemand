@@ -1,0 +1,33 @@
+;Shapelet Tree 
+
+;random seed:1392486640, rand()=125241603, rand()=732034314
+;command = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand 
+
+;Local Class:   0  1 
+;Real  Class:   1  2 
+
+;Node ID class   obj  pos  len  dist_th 
+TreeSize: 8 
+NonL  1    --      4    0    8   0.5181 ==>  21   1  /  13  32 
+Leaf  2     1    
+NonL  3    --      0   14    8   0.7291 ==>  11   0  /   2  32 
+Leaf  6     1    
+Leaf  7     2    
+
+;Shapelet id   <data>
+Shapelet   1  -0.972840 -1.390518 -1.536705 -1.620240 -1.620240 -1.453169 -0.993724  0.050469 
+Shapelet   3  -0.647477 -0.269235 -0.206195  0.613330  1.369815  1.464375  1.054613  0.581810 
+
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.010   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+
+;   == Confusion Matrix ==
+;   real |   2    1 
+;   -----+------------
+;   p  2 | 431  217 
+;   p  1 |  85  296 
+

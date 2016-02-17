@@ -1,0 +1,142 @@
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.680   0.880   6.470   1.040   2.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 74.080   Correct:463 , Wrong: 162
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.250   0.870   6.220   1.020   1.890 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 74.080   Correct:463 , Wrong: 162
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.810   0.790   5.900   1.010   1.820 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 75.840   Correct:474 , Wrong: 151
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.980   0.760   5.960   0.900   2.080 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 69.120   Correct:432 , Wrong: 193
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.870   0.760   5.980   0.860   1.980 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 71.040   Correct:444 , Wrong: 181
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.240   0.830   6.200   1.010   1.850 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 72.800   Correct:455 , Wrong: 170
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.060   0.730   6.100   0.890   2.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 68.960   Correct:431 , Wrong: 194
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.850   0.870   5.790   1.050   1.840 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 76.320   Correct:477 , Wrong: 148
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.920   0.760   5.930   0.980   1.990 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 71.200   Correct:445 , Wrong: 180
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.330   0.810   5.530   0.950   1.780 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 73.920   Correct:462 , Wrong: 163
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.890   0.740   6.000   0.970   1.930 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 75.840   Correct:474 , Wrong: 151
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.690   0.820   5.870   0.900   1.860 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 73.120   Correct:457 , Wrong: 168
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.520   0.730   5.830   0.850   1.820 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 74.880   Correct:468 , Wrong: 157
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.980   0.830   5.950   1.010   1.920 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 72.640   Correct:454 , Wrong: 171
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.850   0.800   5.880   1.000   1.850 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 76.320   Correct:477 , Wrong: 148
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.710   0.780   5.800   0.950   1.860 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 75.520   Correct:472 , Wrong: 153
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.650   0.800   5.790   0.920   1.850 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 71.200   Correct:445 , Wrong: 180
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.020   0.740   6.090   0.960   1.940 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 71.200   Correct:445 , Wrong: 180
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   12.850   1.040   7.730   1.400   2.330 
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   12.230   0.930   7.640   1.110   2.120 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 78.720   Correct:492 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.590   0.730   5.840   0.920   1.820 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 74.080   Correct:463 , Wrong: 162
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.760   0.760   5.830   1.030   1.840 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 68.320   Correct:427 , Wrong: 198
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>    9.850   0.790   5.880   0.950   1.930 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 73.120   Correct:457 , Wrong: 168
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.390   0.840   6.260   0.980   2.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 73.280   Correct:458 , Wrong: 167
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.410   0.800   6.270   1.010   1.970 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 73.120   Correct:457 , Wrong: 168
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   10.800   0.810   6.650   0.990   2.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 76.320   Correct:477 , Wrong: 148
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   12.690   1.000   7.930   1.180   2.250 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 72.000   Correct:450 , Wrong: 175
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   12.850   0.950   7.940   1.150   2.380 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 69.600   Correct:435 , Wrong: 190
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TRAIN 15 500 75 25 25 10 10 tree_SwedishLeaf time_SwedishLeaf
+; time =>   12.700   0.960   7.780   1.160   2.390 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/SwedishLeaf/folds/default/SwedishLeaf_TEST 15 625 tree_SwedishLeaf time_SwedishLeaf
+; accuracy= 70.240   Correct:439 , Wrong: 186
+

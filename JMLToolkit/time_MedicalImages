@@ -1,0 +1,150 @@
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.980   0.490   4.470   0.830   1.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.474   Correct:376 , Wrong: 384
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.060   0.560   4.560   0.680   1.100 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.368   Correct:398 , Wrong: 362
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.010   0.600   4.460   0.700   1.060 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.395   Correct:383 , Wrong: 377
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.050   0.620   4.570   0.650   1.060 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.737   Correct:378 , Wrong: 382
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.690   0.550   4.330   0.640   0.970 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 54.079   Correct:411 , Wrong: 349
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.230   0.560   4.670   0.690   1.090 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.921   Correct:387 , Wrong: 373
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.490   0.480   4.100   0.640   1.080 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.526   Correct:384 , Wrong: 376
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.790   0.500   4.350   0.690   1.100 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.368   Correct:398 , Wrong: 362
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.120   0.430   3.830   0.760   0.880 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.079   Correct:373 , Wrong: 387
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.050   0.540   4.500   0.770   1.040 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 48.289   Correct:367 , Wrong: 393
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.610   0.510   4.260   0.710   0.930 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 47.500   Correct:361 , Wrong: 399
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.050   0.510   4.520   0.820   1.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.737   Correct:378 , Wrong: 382
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.630   0.480   4.310   0.650   1.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.737   Correct:378 , Wrong: 382
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.520   0.520   4.190   0.690   0.960 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 51.842   Correct:394 , Wrong: 366
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.180   0.580   4.690   0.770   0.940 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.474   Correct:376 , Wrong: 384
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.810   0.570   4.260   0.730   1.040 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 48.158   Correct:366 , Wrong: 394
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.430   0.590   4.810   0.730   1.100 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 53.684   Correct:408 , Wrong: 352
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.990   0.650   4.420   0.740   1.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.632   Correct:400 , Wrong: 360
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.850   0.530   4.380   0.720   1.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 51.579   Correct:392 , Wrong: 368
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.370   0.490   4.110   0.670   0.890 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.500   Correct:399 , Wrong: 361
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.760   0.540   5.030   0.730   1.160 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.895   Correct:402 , Wrong: 358
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.750   0.550   4.960   0.970   0.980 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 51.579   Correct:392 , Wrong: 368
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.290   0.520   4.730   0.730   1.070 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.132   Correct:381 , Wrong: 379
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.490   0.650   4.820   0.780   1.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.868   Correct:379 , Wrong: 381
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.220   0.560   4.690   0.740   1.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 49.737   Correct:378 , Wrong: 382
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.230   0.540   4.700   0.780   1.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 53.289   Correct:405 , Wrong: 355
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.960   0.570   4.480   0.730   0.970 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.526   Correct:384 , Wrong: 376
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.240   0.500   4.720   0.750   1.110 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 48.553   Correct:369 , Wrong: 391
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    7.190   0.550   4.700   0.660   1.040 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 50.132   Correct:381 , Wrong: 379
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TRAIN 10 381 57 19 19 10 10 tree_MedicalImages time_MedicalImages
+; time =>    6.920   0.540   4.340   0.890   0.970 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/MedicalImages/folds/default/MedicalImages_TEST 10 760 tree_MedicalImages time_MedicalImages
+; accuracy= 52.237   Correct:397 , Wrong: 363
+

@@ -1,0 +1,2 @@
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/StarLightCurves/folds/default/StarLightCurves_TRAIN 3 1000 1024 204 612 10 10 tree_StarLightCurves time_StarLightCurves
+; time =>   55.510   2.100   7.590   1.060  42.210 

@@ -1,0 +1,442 @@
+package Regression;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.math3.linear.RealMatrix;
+
+import Utilities.GlobalValues;
+import Utilities.Logging;
+import Utilities.Logging.LogLevel;
+
+import Classification.Kernel;
+import Classification.Kernel.KernelType;
+import DataStructures.Matrix;
+
+// SRNP: Supervised Regression Through Nonlinear Projection
+
+public class SRNP 
+{
+	// the regression models, one per each predictor
+	LSSVM [] modelsPredictors;
+	// and one model per target
+	LSSVM modelTarget;
+	
+	// the observed indices of the predictor cells
+	int [][] observedPredictorsIndices;
+	// the observed indices of the target cells
+	int [] observedTargetIndices;
+	
+	Matrix trainPredictors, testPredictors;
+	// the observation data
+	Matrix predictors; 
+	// the train target values
+	double [] trainTargets;
+	
+	public double [] testTargets; 
+	
+	// the low-rank data
+	Matrix U;
+	// the dimensionality of the latent data
+	public int D;
+	
+	// number of instances and predictors
+	int N, NTrain, M;
+	
+	// the learn rate
+	public double eta;
+	
+	// the reciprocal of the number of predictors
+	double recM;
+	
+	// the kernel used for the 
+	public Kernel kernel;
+	// the gamma parameter of each regression
+	public double lambdaU, lambdaV, lambdaW;
+	
+	// the impact weight parameter
+	public double beta;
+	
+	// flag denotes if semisupervised model is requested
+	boolean semiSupervised = true;
+	
+	// the maximum number of epocs
+	public int maxEpocs;
+	public int cutOffEpocs;
+	
+	public double presenceRatio;
+	
+	// default constructor
+	public SRNP()
+	{
+		kernel = new Kernel(KernelType.Polynomial);
+		kernel.type = KernelType.Polynomial;
+		kernel.degree = 2;
+		
+		maxEpocs = 1000;
+		presenceRatio = 0.2;
+	}
+	
+	
+	
+	public void PrecomputeULinearly()
+	{
+		SRLP srlp = new SRLP();	
+		srlp.lambdaU = lambdaU;	
+		srlp.lambdaV = lambdaV/100;	
+		srlp.lambdaW = lambdaW/100;		
+		srlp.D = D; 
+		srlp.numIter = maxEpocs;  
+		srlp.eta = eta; 	
+		srlp.beta = beta; 
+		
+		srlp.testTargets = testTargets;
+		srlp.Train(trainPredictors, trainTargets, testPredictors);
+		
+		U = srlp.U;
+		
+	}
+	
+	// initialize the regression models 
+	public void InitializeRegressionsModels( Matrix trainPredictors, double [] trainTargets, Matrix testPredictors)
+	{
+		// store a reference to the data
+		this.trainPredictors = trainPredictors;
+		this.testPredictors = testPredictors;
+		this.trainTargets = trainTargets;
+		
+		// initialize the data 
+		if( testPredictors != null )
+		{
+			predictors = new Matrix(trainPredictors); 
+			predictors.AppendMatrix(testPredictors);
+			semiSupervised = true;
+		}
+		else 
+		{
+			predictors = trainPredictors;
+			semiSupervised = false;
+		}
+		// initialize the latent 
+		
+		// assign the train target
+		
+		// the number of variables
+		N = predictors.getDimRows();
+		NTrain = trainTargets.length;
+		M = predictors.getDimColumns();
+		
+		recM = 1.0 / (double) M;
+		// initialize matrix U
+		U = new Matrix(N, D);
+		U.RandomlyInitializeCells(GlobalValues.SMALL_EPSILON, GlobalValues.SMALL_EPSILON); 
+		
+		// initialize the array of the regression models
+		modelsPredictors = new LSSVM[M];
+		
+		observedPredictorsIndices = new int[M][];
+		
+		// initialize the predictor models and record the observed instances 
+		for(int j = 0; j < M; j++)
+		{
+			modelsPredictors[j] = new LSSVM();
+			modelsPredictors[j].kernel = kernel; 
+			modelsPredictors[j].beta = beta;
+			modelsPredictors[j].lambda = lambdaV;
+			
+			// read the observed indices of the predictor j and save them into
+			// the array of observed indices
+			List<Integer> indices = new ArrayList<Integer>();
+			
+			for(int i = 0; i < N; i++)
+				if( predictors.get(i,j) != GlobalValues.MISSING_VALUE )
+					indices.add(i);
+					
+			observedPredictorsIndices[j] = new int[indices.size()];
+			for( int i = 0; i < indices.size(); i++)
+				observedPredictorsIndices[j][i] = indices.get(i);		
+		}
+		
+		// initialize the target model
+		modelTarget = new LSSVM();
+		modelTarget.kernel = kernel;
+		modelTarget.beta = 1.0-beta;
+		modelTarget.lambda = lambdaW;
+		
+		// every training target index 1-NTrain should be set to observed
+		int presentLabels = (int) Math.ceil( presenceRatio*NTrain );
+		observedTargetIndices = new int[presentLabels];
+		for(int i = 0; i < presentLabels; i++)
+		{
+			observedTargetIndices[i]=i;
+		} 
+		
+		//PrecomputeULinearly();
+	}
+	
+	/*
+	 * The method that trains the supervised multi-regression
+	 * nonlinear factorization
+	 */
+	public void Train( Matrix trainPredictors, double [] trainTargets, Matrix testPredictors )
+	{
+		List<Double> historyMSE = new ArrayList<Double>(); 
+		historyMSE.add( Double.MAX_VALUE );
+		
+		// assert some conditions
+		if( trainPredictors == null || trainTargets == null)
+		{
+			Logging.println("SRNP::Train : Train data null", LogLevel.ERROR_LOG);
+			return;
+		}
+		else if( kernel == null)
+		{
+			Logging.println("SRNP::Train : Kernel not initialized", LogLevel.ERROR_LOG);
+			return;
+		}
+		
+		// initialize the models
+		InitializeRegressionsModels(trainPredictors, trainTargets, testPredictors);
+		
+		// iterate the gradient descent learning algorithm for a defined periods
+		for(int epoc = 0; epoc < maxEpocs; epoc++)
+		{
+			// train the predictor models first
+			for(int j = 0; j < M; j++)
+			{
+				modelsPredictors[j].Train(U, predictors.getCol(j), observedPredictorsIndices[j]);
+				UpdateUPredictor(j);
+			}
+			
+			modelTarget.Train(U, trainTargets, observedTargetIndices);
+			UpdateUTarget();
+				
+			
+			double trainTargetMSE = PredictTrainSet();
+			
+			// if nan detected then re-start from beginning with a smaller learn rate 
+			if( Double.isNaN( trainTargetMSE ) ) 
+			{
+				epoc = 0;
+				eta /= 2;
+				InitializeRegressionsModels(trainPredictors, trainTargets, testPredictors);
+				continue;
+			}
+			
+			if( Logging.currentLogLevel != LogLevel.PRODUCTION_LOG )
+			{
+				double predictorsMSE = PredictorsLoss();
+				//double trainTargetMSE = PredictTrainSet();
+				double testTargetMSE = PredictTestSet(testTargets);
+				
+				
+				Logging.println("Epoc=" + epoc + ", predictorsMSE=" + predictorsMSE + ", trainTargetMSE=" + trainTargetMSE + ", testTargetMSE=" + testTargetMSE, LogLevel.DEBUGGING_LOG);
+			}
+			
+		}
+		
+		 
+	}
+	
+	
+	// update the low rank projection U, based on the solution of the target variable 
+	public void UpdateUTarget()
+	{
+		int i=0,l=0;
+		double grad = 0, kernelGrad = 0;
+		
+		for(int iIndex = 0; iIndex < observedTargetIndices.length; iIndex++)
+		{
+			for(int lIndex = 0; lIndex < observedTargetIndices.length; lIndex++)
+			{
+				i = observedTargetIndices[iIndex];
+				l = observedTargetIndices[lIndex];
+				
+				for(int k = 0; k < D; k++)
+				{
+					// update U(i,k)
+					kernelGrad = ComputeKernelGradient(i, l, i, k); 
+					
+					if( kernelGrad != 0)
+					{
+						grad = modelTarget.alphas[iIndex] 
+							* modelTarget.alphas[lIndex]
+								* kernelGrad
+								-lambdaU*U.get(i,k);
+						
+						U.set(i, k,  U.get(i,k) + eta*grad);
+					}
+					
+					// update U(l,k)
+					kernelGrad = ComputeKernelGradient(i, l, l, k);
+					
+					if( kernelGrad != 0)
+					{
+						grad = modelTarget.alphas[iIndex] 
+								* modelTarget.alphas[lIndex]
+									* kernelGrad
+									- lambdaU*U.get(l,k);
+						
+						U.set(l, k,  U.get(l,k) + eta*grad);
+					}
+					
+				}
+			}
+		}		
+	}
+	
+	public void UpdateUPredictor(int j)
+	{
+		int i=0,l=0;
+		double grad = 0, kernelGrad = 0;
+		
+		for(int iIndex = 0; iIndex < observedPredictorsIndices[j].length; iIndex++)
+		{
+			for(int lIndex = 0; lIndex < observedPredictorsIndices[j].length; lIndex++)
+			{
+				i = observedPredictorsIndices[j][iIndex];
+				l = observedPredictorsIndices[j][lIndex];
+				
+				for(int k = 0; k < D; k++)
+				{
+					// update U(i,k)
+					kernelGrad = ComputeKernelGradient(i, l, i, k);
+					
+					if( kernelGrad != 0)
+					{
+						grad = modelsPredictors[j].alphas[iIndex] 
+								* modelsPredictors[j].alphas[lIndex]
+										* kernelGrad
+								- lambdaU*U.get(l,k);
+						
+						U.set(i, k,  U.get(i,k) + eta*grad);
+					}
+					
+					// update U(l,k)
+					kernelGrad = ComputeKernelGradient(i, l, l, k);
+					
+					if( kernelGrad != 0)
+					{
+						grad = modelsPredictors[j].alphas[iIndex] 
+								* modelsPredictors[j].alphas[lIndex]
+										* kernelGrad
+								-lambdaU*U.get(l,k); 
+						
+						U.set(l, k,  U.get(l,k) + eta*grad);
+					}
+				}
+			}
+		}
+	}
+	
+	// compute the kernel gradient { d K(i,l) / d U(r,k) } 
+	public double ComputeKernelGradient(int i, int l, int r, int k)
+	{
+		double grad = 0;
+		
+		if( kernel.type == KernelType.Linear)
+		{
+			if( r == i )
+				grad = U.get(l, k);
+			else if(r == l)
+				grad = U.get(i, k);	
+		}
+		else if( kernel.type == KernelType.Polynomial)
+		{
+			if( r == i || r == l )
+			{
+				grad = kernel.degree * 
+						Utilities.StatisticalUtilities.Power(U.RowDotProduct(i, l)+1, kernel.degree-1); 
+				
+				if( r == i )
+					grad *= U.get(l, k);
+				else if(r == l)
+					grad *= U.get(i, k);
+			}			
+		}
+
+		else if( kernel.type == KernelType.Gaussian)
+		{
+			if( r == i || r == l) 
+			{
+				grad = (r == i) ? 1 : -1;
+				
+				double kerVal = Math.exp(-kernel.EuclideanDistance(U.getRow(i), U.getRow(l))/kernel.sig2);
+				
+				grad *= -2*((U.get(i,k) - U.get(l,k))/kernel.sig2) * kerVal;  
+				
+				//System.out.println(grad + ", diff: " + (U.get(i,k) - U.get(l,k)) + ", kernel" + kerVal + ", sig2" + kernel.sig2);
+				
+			}
+		}
+
+		else if( kernel.type == KernelType.Gaussian)
+		{
+			
+		}
+		
+		return grad;
+	}
+	
+	public double PredictTestSet(double [] testTargets )
+	{
+		double mse = 0;
+		
+		int NTest = testTargets.length;
+		
+		for( int i = 0; i < NTest; i++)
+		{
+			double err = 
+					testTargets[i] 
+							- modelTarget.PredictInstance(U.getRow(NTrain+i), observedTargetIndices);
+			
+			mse += err*err;
+		}
+		
+		return  mse/NTest; 
+	}
+	
+	/*
+	 * Predict the training set
+	 */
+	public double PredictTrainSet( )
+	{
+		double mse = 0;
+		
+		for( int i = 0; i < NTrain; i++)
+		{
+			double err = 
+					trainTargets[i] 
+							- modelTarget.PredictInstance(U.getRow(i), observedTargetIndices);
+			
+			mse += err*err;
+		}
+		
+		return  mse/NTrain;
+	}
+	
+	// Get overall rmse loss
+	public double PredictorsLoss()
+	{
+		double loss = 0;
+		int numObservedCells = 0;
+		
+		for(int i = 0; i < N; i++)
+			for(int p = 0; p < M; p++)
+			{
+				if( predictors.get(i, p) != GlobalValues.MISSING_VALUE )
+				{
+					double e_rc = predictors.get(i, p) - 
+							modelsPredictors[p].PredictInstance(U.getRow(i), observedPredictorsIndices[p]); 
+					
+					loss += e_rc * e_rc;
+					
+					numObservedCells++;
+				}
+			}
+		
+		return loss/numObservedCells; 
+	}
+	
+	
+}

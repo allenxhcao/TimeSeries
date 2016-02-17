@@ -1,0 +1,200 @@
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.010   0.000   0.010   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.010   0.010   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.010   0.000   0.010   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 24 4 12 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.010   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 83.188   Correct:856 , Wrong: 173
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.100   0.010   0.080   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 72.886   Correct:750 , Wrong: 279
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.060   0.000   0.030   0.000   0.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.060   0.000   0.050   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.010   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.020   0.030   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.000   0.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.010   0.030   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.010   0.020   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.010   0.030   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.010   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 77.843   Correct:801 , Wrong: 228
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.040   0.000   0.020   0.010   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.010   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.010   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.000   0.020   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.020   0.000   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.010   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.000   0.020   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.000   0.020   0.000   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.030   0.000   0.020   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 87.075   Correct:896 , Wrong: 133
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.060   0.000   0.020   0.010   0.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 72.109   Correct:742 , Wrong: 287
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.080   0.010   0.060   0.010   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 72.303   Correct:744 , Wrong: 285
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.080   0.010   0.050   0.020   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 72.303   Correct:744 , Wrong: 285
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.020   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.020   0.010 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.030   0.000   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.000   0.030 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.000   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.040   0.010   0.030   0.000   0.000 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.010   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
+; cmd = /home/jgrabocka/Software/trainFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TRAIN 2 67 12 4 4 10 10 tree_ItalyPowerDemand time_ItalyPowerDemand
+; time =>    0.050   0.000   0.020   0.010   0.020 
+; command = /home/jgrabocka/Software/testFastShapelet /mnt/E/Data/classification/timeseries/ItalyPowerDemand/folds/default/ItalyPowerDemand_TEST 2 1029 tree_ItalyPowerDemand time_ItalyPowerDemand
+; accuracy= 70.651   Correct:727 , Wrong: 302
+
