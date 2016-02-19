@@ -627,7 +627,7 @@ public class LearnShapeletsGeneralizedAdagrad
  				
 				"alpha=-50",
 				"eta=0.1",
-				"maxEpochs=10000",
+				"maxEpochs=1000",
 				"K=-1",		
 				"L=0.1", 
 				"R=3", 
