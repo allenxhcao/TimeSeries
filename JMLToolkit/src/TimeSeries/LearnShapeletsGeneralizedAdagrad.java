@@ -3,6 +3,9 @@ package TimeSeries;
 import info.monitorenter.gui.chart.ITrace2D;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -583,6 +586,28 @@ public class LearnShapeletsGeneralizedAdagrad
 		}
 	}
 	
+	public void SaveShapeletsToFile(String fileName) throws FileNotFoundException
+	{
+		new File(fileName);
+		
+		PrintWriter writer = new PrintWriter(fileName);
+		
+		for(int r = 0; r < R; r++)
+		{
+			for(int k = 0; k < K; k++)
+			{
+				writer.print(r+" "+k+" ");
+				
+				for(int l = 0; l < L[r]; l++)
+				{
+					writer.print(Shapelets[r][k][l] + " ");
+				}
+				
+				writer.println();
+			}
+		}
+		writer.close();
+	}
 	
 	public void PrintProjectedData()
 	{
@@ -608,14 +633,14 @@ public class LearnShapeletsGeneralizedAdagrad
 	}
 	
 	// the main execution of the program
-	public static void main(String [] args)
+	public static void main(String [] args) throws IOException
 	{
 		// in case ones wants to run it from an IDE like eclipse 
 		// then the command line parameters can be set as
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "MIMICIII_normal_AS_NEG_VS_shock_pos_AS_POS_concatenate"; 
+			ds = "FaceFour"; 
 
 			String sp = File.separator; 
 		
@@ -633,7 +658,11 @@ public class LearnShapeletsGeneralizedAdagrad
 				"R=3", 
 				"lambdaW=0.01" 
 				};
-		}			
+			
+		}	
+		String dir = "UCR_TS_Archive_2015\\",
+				ds = "FaceFour"; 
+		String sp = File.separator; 
 
 		// values of hyperparameters
 		double eta = -1, lambdaW = -1, alpha = -1, L = -1, K = -1;
@@ -718,7 +747,7 @@ public class LearnShapeletsGeneralizedAdagrad
         lsg.Learn(); 
         
         // learn the local convolutions
-
+        
         long endTime = System.currentTimeMillis(); 
         
 		System.out.println( 
@@ -731,6 +760,10 @@ public class LearnShapeletsGeneralizedAdagrad
 				+ "maxEpochs="+ maxEpochs + " " 
 				+ "time="+ (endTime-startTime) 
 				); 
+		lsg.PrintShapeletsAndWeights();
+		lsg.SaveShapeletsToFile(dir + ds + sp    
+				+ ds + "_LearnedShapelets");
+		
 	}
 
 }
