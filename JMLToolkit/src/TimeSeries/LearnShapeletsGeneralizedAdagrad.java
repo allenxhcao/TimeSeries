@@ -614,8 +614,8 @@ public class LearnShapeletsGeneralizedAdagrad
 		// then the command line parameters can be set as
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
-			String dir = "C:\\Users\\xi\\Desktop\\UCR_TS_Archive_2015\\",
-			ds = "FaceFour"; 
+			String dir = "UCR_TS_Archive_2015\\",
+			ds = "MIMICIII_normal_AS_NEG_VS_shock_pos_AS_POS_concatenate"; 
 
 			String sp = File.separator; 
 		
@@ -625,19 +625,13 @@ public class LearnShapeletsGeneralizedAdagrad
 				"testSet=" + dir + ds + sp
 						+ ds + "_TEST",  
  				
-				"alpha=-30",
+				"alpha=-50",
 				"eta=0.1",
-				"maxEpochs=1000",
+				"maxEpochs=10000",
 				"K=-1",		
-				
-				
 				"L=0.1", 
 				"R=3", 
 				"lambdaW=0.01" 
-				
-				
-				
-				
 				};
 		}			
 
