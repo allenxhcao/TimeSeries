@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item value="642" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="640" key="DIALOG_HEIGHT"/>
+		<item value="496" key="DIALOG_X_ORIGIN"/>
+		<item value="107" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\xi\Documents\GitHub\TimeSeries\.git">
+			<item value="false"/>
+			<item value="allenxhcao &lt;allenxhcao@gmail.com&gt;"/>
+			<item value="New Work Space for the project"/>
+			<item value="allenxhcao &lt;allenxhcao@gmail.com&gt;"/>
+			<item value="34782a9e77727e8b21538676ea5a02678550c633"/>
+		</list>
+	</section>
+</section>
