@@ -1,0 +1,45 @@
+clear
+close all
+
+dir = '../JMLToolkit/UCR_TS_Archive_2015';
+tsName = 'FaceFour';
+
+sl = readtable([dir '/' tsName '/' tsName '_LearnedShapelets'],...
+    'ReadVariableNames',false,'Delimiter',' ');
+
+sl  = table2array(sl);
+
+K = sum(sl(:,1)==0);
+R = floor(sqrt(size(sl,1)/K*2));
+Q = size(sl,2)-2-1;
+lsl = cell(R,1);
+
+rowCount = 1;
+for r = 1:R
+    lsl{r} = nan(K,r*size(sl,2)-2-1-(r-1)*R);
+    for k = 1:K
+        sltemp = reshape(sl(rowCount:rowCount+r-1,:)',1,[]);
+        lsl{r}(k,:) = sltemp(3:end-1-(r-1)*R);
+        rowCount = rowCount + r;
+    end
+
+end
+
+for r = 1:R
+    subplot(R,1,r)
+    plot(lsl{r}');
+    xlim([1 R*Q])
+end
+
+short = lsl{1};
+long = lsl{2}(1,:);
+
+nsl = size(short,1);
+
+nrow = floor(sqrt(nsl));
+
+for k = 1:nsl
+    
+    
+    
+end
