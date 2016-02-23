@@ -2,7 +2,7 @@ clear
 close all
 
 dir = '../JMLToolkit/UCR_TS_Archive_2015';
-tsName = 'FaceFour';
+tsName = 'MIMICIII_normal_AS_NEG_VS_shock_pos_AS_POS_mean';
 
 sl = readtable([dir '/' tsName '/' tsName '_LearnedShapelets'],...
     'ReadVariableNames',false,'Delimiter',' ');
@@ -31,8 +31,8 @@ for r = 1:R
     xlim([1 R*Q])
 end
 
-short = lsl{3};
-long = lsl{3}(1,:);
+short = lsl{1};
+long = lsl{3}(2,:);
 
 nsl = size(short,1);
 
@@ -47,4 +47,5 @@ for k = 1:nsl
     plot(ind:ind+length(short(k,:))-1,short(k,:));
     xlim([1 length(long)])
     hold off
+    title(num2str(k))
 end

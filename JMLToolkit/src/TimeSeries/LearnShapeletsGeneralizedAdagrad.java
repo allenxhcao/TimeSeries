@@ -588,12 +588,12 @@ public class LearnShapeletsGeneralizedAdagrad
 	
 	public void SaveShapeletsToFile(String fileName) throws FileNotFoundException
 	{
-		new File(fileName);
-		
-		PrintWriter writer = new PrintWriter(fileName);
-		
+				
 		for(int r = 0; r < R; r++)
 		{
+			new File(fileName + r);
+			
+			PrintWriter writer = new PrintWriter(fileName + r);
 			for(int k = 0; k < K; k++)
 			{
 				writer.print(r+" "+k+" ");
@@ -605,8 +605,9 @@ public class LearnShapeletsGeneralizedAdagrad
 				
 				writer.println();
 			}
+			writer.close();
 		}
-		writer.close();
+		
 	}
 	
 	public void PrintProjectedData()
@@ -640,7 +641,7 @@ public class LearnShapeletsGeneralizedAdagrad
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "FaceFour"; 
+			ds = "MIMICIII_normal_AS_NEG_VS_shock_pos_AS_POS_mean"; 
 
 			String sp = File.separator; 
 		
@@ -661,7 +662,7 @@ public class LearnShapeletsGeneralizedAdagrad
 			
 		}	
 		String dir = "UCR_TS_Archive_2015\\",
-				ds = "FaceFour"; 
+				ds = "MIMICIII_normal_AS_NEG_VS_shock_pos_AS_POS_mean"; 
 		String sp = File.separator; 
 
 		// values of hyperparameters
