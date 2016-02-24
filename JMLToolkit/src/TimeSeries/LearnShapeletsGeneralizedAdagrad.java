@@ -656,7 +656,7 @@ public class LearnShapeletsGeneralizedAdagrad
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate"; 
+			ds = "MIMICIII_infection_NEG_VS_shock_pos_POS_60age_1wks_2sub_concatenate"; 
 
 			String sp = File.separator; 
 		
@@ -668,7 +668,7 @@ public class LearnShapeletsGeneralizedAdagrad
  				
 				"alpha=-50",
 				"eta=0.1",
-				"maxEpochs=1000",
+				"maxEpochs=600",
 				"K=-1",		
 				"L=0.1", 
 				"R=3", 
@@ -677,7 +677,7 @@ public class LearnShapeletsGeneralizedAdagrad
 			
 		}	
 		String dir = "UCR_TS_Archive_2015\\",
-				ds = "MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate"; 
+				ds = "MIMICIII_infection_NEG_VS_shock_pos_POS_60age_1wks_2sub_concatenate"; 
 		String sp = File.separator; 
 
 		// values of hyperparameters
