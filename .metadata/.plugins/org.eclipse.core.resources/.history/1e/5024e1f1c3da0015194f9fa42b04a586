@@ -608,7 +608,7 @@ public class LearnShapeletsGeneralizedAdagrad
 			writer.close();
 		}
 		
-		new File(fileName + "_weights");
+		new File(fileName + "weights");
 		PrintWriter writer = new PrintWriter(fileName + "weights");
 		for(int c = 0; c < C; c++)
 		{
@@ -618,7 +618,7 @@ public class LearnShapeletsGeneralizedAdagrad
 				{
 					writer.print(W[c][r][k] + " ");
 				}
-				writer.println(biasW[c]);
+				writer.println(biasW[c] + "*");
 			}
 			
 		}
@@ -765,7 +765,7 @@ public class LearnShapeletsGeneralizedAdagrad
         // learn the local convolutions
         
         long endTime = System.currentTimeMillis(); 
-        double testResult = lsg.GetMCRTestSet();
+        
 		System.out.println( 
 				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
 				+ "L=" + L	+ " " 
@@ -776,36 +776,6 @@ public class LearnShapeletsGeneralizedAdagrad
 				+ "maxEpochs="+ maxEpochs + " " 
 				+ "time="+ (endTime-startTime) 
 				); 
-		while (testResult>=0.39) {
-			lsg.Learn();
-			System.out.println( 
-					String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-					+ "L=" + L	+ " " 
-					+ "R=" + R	+ " " 
-					+ "lW=" + lambdaW + " "
-					+ "alpha=" + alpha + " " 
-					+ "eta=" + eta + " " 
-					+ "maxEpochs="+ maxEpochs + " " 
-					+ "time="+ (endTime-startTime) 
-					); 
-			testResult = lsg.GetMCRTestSet();
-		}
-		new File(dir + ds + sp    
-				+ ds + "_results");
-		
-		PrintWriter writer = new PrintWriter(dir + ds + sp    
-				+ ds + "_results");
-		writer.println( 
-				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-				+ "L=" + L	+ " " 
-				+ "R=" + R	+ " " 
-				+ "lW=" + lambdaW + " "
-				+ "alpha=" + alpha + " " 
-				+ "eta=" + eta + " " 
-				+ "maxEpochs="+ maxEpochs + " " 
-				+ "time="+ (endTime-startTime) 
-				); 
-		writer.close();
 		lsg.PrintShapeletsAndWeights();
 		lsg.SaveShapeletsToFile(dir + ds + sp    
 				+ ds + "_LearnedShapelets");

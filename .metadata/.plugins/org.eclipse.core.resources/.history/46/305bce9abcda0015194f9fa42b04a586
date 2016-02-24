@@ -608,21 +608,6 @@ public class LearnShapeletsGeneralizedAdagrad
 			writer.close();
 		}
 		
-		new File(fileName + "_weights");
-		PrintWriter writer = new PrintWriter(fileName + "weights");
-		for(int c = 0; c < C; c++)
-		{
-			for(int r = 0; r < R; r++)
-			{				
-				for(int k = 0; k < K; k++)
-				{
-					writer.print(W[c][r][k] + " ");
-				}
-				writer.println(biasW[c]);
-			}
-			
-		}
-		writer.close();
 	}
 	
 	public void PrintProjectedData()
@@ -668,7 +653,7 @@ public class LearnShapeletsGeneralizedAdagrad
  				
 				"alpha=-50",
 				"eta=0.1",
-				"maxEpochs=1000",
+				"maxEpochs=2000",
 				"K=-1",		
 				"L=0.1", 
 				"R=3", 
@@ -765,7 +750,7 @@ public class LearnShapeletsGeneralizedAdagrad
         // learn the local convolutions
         
         long endTime = System.currentTimeMillis(); 
-        double testResult = lsg.GetMCRTestSet();
+        
 		System.out.println( 
 				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
 				+ "L=" + L	+ " " 
@@ -776,36 +761,6 @@ public class LearnShapeletsGeneralizedAdagrad
 				+ "maxEpochs="+ maxEpochs + " " 
 				+ "time="+ (endTime-startTime) 
 				); 
-		while (testResult>=0.39) {
-			lsg.Learn();
-			System.out.println( 
-					String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-					+ "L=" + L	+ " " 
-					+ "R=" + R	+ " " 
-					+ "lW=" + lambdaW + " "
-					+ "alpha=" + alpha + " " 
-					+ "eta=" + eta + " " 
-					+ "maxEpochs="+ maxEpochs + " " 
-					+ "time="+ (endTime-startTime) 
-					); 
-			testResult = lsg.GetMCRTestSet();
-		}
-		new File(dir + ds + sp    
-				+ ds + "_results");
-		
-		PrintWriter writer = new PrintWriter(dir + ds + sp    
-				+ ds + "_results");
-		writer.println( 
-				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-				+ "L=" + L	+ " " 
-				+ "R=" + R	+ " " 
-				+ "lW=" + lambdaW + " "
-				+ "alpha=" + alpha + " " 
-				+ "eta=" + eta + " " 
-				+ "maxEpochs="+ maxEpochs + " " 
-				+ "time="+ (endTime-startTime) 
-				); 
-		writer.close();
 		lsg.PrintShapeletsAndWeights();
 		lsg.SaveShapeletsToFile(dir + ds + sp    
 				+ ds + "_LearnedShapelets");
