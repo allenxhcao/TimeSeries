@@ -1,0 +1,21 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 4 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets0
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets1
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets2
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapeletsweights
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/acc039_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets0
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/acc039_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets1
+#	deleted:    JMLToolkit/UCR_TS_Archive_2015/MIMICIII_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate/acc039_infection_AS_NEG_VS_shock_pos_AS_POS__age60after_1weeks_2subsamples_concatenate_LearnedShapelets2
+#
+# Untracked files:
+#	y5n4qm1c.mrb.txt
+#
+
