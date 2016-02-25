@@ -7,24 +7,24 @@ tsName = 'MIMICIII_infection_NEG_VS_shock_pos_POS_60age_1wks_2sub_concatenate';
 fName = dir([directory '/' tsName '/' tsName '_LearnedShapelets*']);
 
 n_shapelet_file = length(fName)-1;
-sl = cell(n_shapelet_file,1);
+lsl = cell(n_shapelet_file,1);
 
 for k = 1:n_shapelet_file
-    temp = readtable([directory '/' tsName '/' fName(k).name],...
+    sl = readtable([directory '/' tsName '/' fName(k).name],...
         'ReadVariableNames',false,'Delimiter',' ');
-    temp  = table2array(temp);
-    sl{k} = temp(:,3:end-1);
+    sl  = table2array(sl);
+    lsl{k} = sl(:,3:end-1);
 end
 
 %% Load training data
-ts_train = readtable([directory '/' tsName '/' tsName '_TRAIN'],...
-        'ReadVariableNames',false,'Delimiter',',');
+tsTrain = readtable([directory '/' tsName '/' tsName '_TRAIN'],...
+        'ReadVariableNames',false,'Delimiter',' ');
 
-ts_train = table2array(ts_train(:,2:end));
+
 
 %% 
-short = sl{3}; % whole bunch of short time series
-long = ts_train(3,:); % one long time series
+short = lsl{1}; % whole bunch of short time series
+long = lsl{3}(2,:); % one long time series
 
 nsl = size(short,1);
 
