@@ -21,7 +21,7 @@ end
 ts_train = readtable([directory '/' tsName '/' tsName '_TRAIN'],...
         'ReadVariableNames',false,'Delimiter',',');
 
-y_train = table2array(ts_train(:,1));
+y_train = table2array(ts_train(:,1))-1; % class labels are 0 and 1
 ts_train = table2array(ts_train(:,2:end));
  
 n_train = size(ts_train,1);
@@ -29,7 +29,7 @@ n_train = size(ts_train,1);
 ts_test = readtable([directory '/' tsName '/' tsName '_TEST'],...
         'ReadVariableNames',false,'Delimiter',',');
 
-y_test = table2array(ts_test(:,1));
+y_test = table2array(ts_test(:,1))-1;   % class labels are 0 and 1
 ts_test = table2array(ts_test(:,2:end));
 n_test = size(ts_test,1);
 
@@ -47,7 +47,7 @@ for r = 1:R
         end
     end
 end
-tf_train = reshape(tf_train,[],n_train)';
+x_train = reshape(tf_train,[],n_train)';
 
 for r = 1:R
     for k = 1:K
@@ -56,7 +56,7 @@ for r = 1:R
         end
     end
 end
-tf_test = reshape(tf_test,[],n_test)';
+x_test = reshape(tf_test,[],n_test)';
 
-save([directory '/' tsName '/' tsName '_TRAIN_TF'],'tf_train','y_train');
-save([directory '/' tsName '/' tsName '_TEST_TF'],'tf_test','y_test');
+save([directory '/' tsName '/' tsName '_TRAIN_TF'],'tf_train','y_train','x_train');
+save([directory '/' tsName '/' tsName '_TEST_TF'],'tf_test','y_test','x_test');
