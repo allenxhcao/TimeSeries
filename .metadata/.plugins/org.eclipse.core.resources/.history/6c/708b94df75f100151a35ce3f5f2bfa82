@@ -135,17 +135,8 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		// set the total number of shapelets per scale as a rule of thumb 
 		// to the logarithm of the total segments
-		if( K < 0) {
-			K = (int) Math.log(totalSegments) * (C-1)/2; 
-			lambdaS1 = 1.0/((double)K*K*R); // ********************
-//			lambdaS1 = 0.0;
-		}
-		
-		
-		
-//		if (lambdaS1 > 0) 
-//			K = (int) K/2; // ************************************************************
-		
+		if( K < 0)
+			K = (int) Math.log(totalSegments) * (C-1); 
 		
 		Logging.println("ITrain="+ITrain + ", ITest="+ITest + ", Q="+Q + ", Classes="+C, LogLevel.DEBUGGING_LOG);
 		Logging.println("K="+K + ", L_min="+ L_min + ", R="+R, LogLevel.DEBUGGING_LOG);
@@ -554,19 +545,8 @@ public class LearnShapeletsGeneralizedDiverse
 				
 				lossHistory.add(lossTrain);
 				
-				double totalShapeletDintra = 0.0;
-				for (int r = 0; r < R; r++) {
-					for (int k = 0; k < K; k++) {
-						for (int kp = 0; kp < k; kp++) {
-							for (int l = 0; l < L[r]; l++) {
-								totalShapeletDintra += 1.0/((double)L[r])*(Shapelets[r][k][l]-Shapelets[r][kp][l])*(Shapelets[r][k][l]-Shapelets[r][kp][l]);
-							}
-						}
-					}
-				}
-				
 				Logging.println("It=" + iter + ", alpha= "+alpha+", lossTrain="+ lossTrain + ", lossTest="+ lossTest  +
-						", totalShapeletDintra=" +totalShapeletDintra + ", MCRTrain=" +mcrTrain + ", MCRTest=" +mcrTest //+ ", SVM=" + mcrSVMTest
+								", MCRTrain=" +mcrTrain + ", MCRTest=" +mcrTest //+ ", SVM=" + mcrSVMTest
 								, LogLevel.DEBUGGING_LOG);
 				
 				//System.out.println( eta/Math.sqrt(GradHistBiasW[0]) );
@@ -700,7 +680,7 @@ public class LearnShapeletsGeneralizedDiverse
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "TwoLeadECG"; 
+			ds = "FaceFour"; 
 
 			String sp = File.separator; 
 		
@@ -721,7 +701,7 @@ public class LearnShapeletsGeneralizedDiverse
 			
 		}	
 		String dir = "UCR_TS_Archive_2015\\",
-				ds = "Beef"; 
+				ds = "FaceFour"; 
 		String sp = File.separator; 
 
 		// values of hyperparameters
@@ -793,13 +773,12 @@ public class LearnShapeletsGeneralizedDiverse
         // set the learn rate and the number of iterations
         lsg.maxIter = maxEpochs;
         // set te number of patterns
-        lsg.K = (int)(K*T.getDimColumns()); // **********************************
+        lsg.K = (int)(K*T.getDimColumns()/2); // **********************************
         lsg.L_min = (int)(L*T.getDimColumns());
         lsg.R = R;
         // set the regularization parameter
         lsg.lambdaW = lambdaW;  
-//        lsg.lambdaS1 = 100.0/((double) lsg.R*lsg.K*lsg.K); // **************************************************************
-        lsg.lambdaS1 = 0; // **************************************************************
+        lsg.lambdaS1 = 10.0/((double) lsg.R*lsg.K*lsg.K); // **************************************************************
 //        lsg.lambdaS1 = 1; // **************************************************************
         lsg.eta = eta;  
         lsg.alpha = alpha; 
@@ -853,7 +832,7 @@ public class LearnShapeletsGeneralizedDiverse
 				+ "time="+ (endTime-startTime) 
 				); 
 		writer.close();
-		// lsg.PrintShapeletsAndWeights();
+		lsg.PrintShapeletsAndWeights();
 		lsg.SaveShapeletsToFile(dir + ds + sp    
 				+ ds + "_LearnedShapelets");
 		
