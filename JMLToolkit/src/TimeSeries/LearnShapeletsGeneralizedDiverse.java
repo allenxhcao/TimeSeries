@@ -137,14 +137,9 @@ public class LearnShapeletsGeneralizedDiverse
 		// to the logarithm of the total segments
 		if( K < 0) {
 			K = (int) Math.log(totalSegments) * (C-1)/2; 
-			lambdaS1 = 1.0/((double)K*K*R); // ********************
+			lambdaS1 =1/((double)K*K*R); // ********************
 //			lambdaS1 = 0.0;
 		}
-		
-		
-		
-//		if (lambdaS1 > 0) 
-//			K = (int) K/2; // ************************************************************
 		
 		
 		Logging.println("ITrain="+ITrain + ", ITest="+ITest + ", Q="+Q + ", Classes="+C, LogLevel.DEBUGGING_LOG);
@@ -498,8 +493,9 @@ public class LearnShapeletsGeneralizedDiverse
 								for(int j = 0; j < J[r]; j++)
 									tmp2 += E[i][r][k][j]*(1 + alpha*(D[i][r][k][j] - M[i][r][k]))*(Shapelets[r][k][l] - T.get(i, j+l));
 								
-								gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(K*Shapelets[r][k][l]-intraShapeletSum[r][l]);
-								
+								//gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(K*Shapelets[r][k][l]-intraShapeletSum[r][l]);
+								gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(-intraShapeletSum[r][l]);
+								// gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2;
 								// add the gradient to the history
 								GradHistShapelets[r][k][l] += gradS_rkl*gradS_rkl;
 								
@@ -700,7 +696,7 @@ public class LearnShapeletsGeneralizedDiverse
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "TwoLeadECG"; 
+			ds = "Beef"; 
 
 			String sp = File.separator; 
 		
@@ -711,10 +707,10 @@ public class LearnShapeletsGeneralizedDiverse
 						+ ds + "_TEST",  
  				
 				"alpha=-50",
-				"eta=0.01",
+				"eta=0.1",
 				"maxEpochs=1000",
 				"K=-1",		
-				"L=0.1", 
+				"L=0.2", 
 				"R=3", 
 				"lambdaW=0.01" 
 				};
@@ -755,7 +751,7 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		
 		// set predefined parameters if none set
-		if(R < 0) R = 4;
+		if(R < 0) R = 3;
 		if(L < 0) L = 0.15;
 		if(eta < 0) eta = 0.01;
 		if(alpha > 0) alpha = -30;
@@ -838,10 +834,11 @@ public class LearnShapeletsGeneralizedDiverse
 			testResult = lsg.GetMCRTestSet();
 		}
 		new File(dir + ds + sp    
-				+ ds + "_results");
+				+ ds + "_Diverse" + "_results");
 		
 		PrintWriter writer = new PrintWriter(dir + ds + sp    
-				+ ds + "_results");
+				+ ds + "_Diverse" + "_results");
+		
 		writer.println( 
 				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
 				+ "L=" + L	+ " " 
@@ -855,7 +852,7 @@ public class LearnShapeletsGeneralizedDiverse
 		writer.close();
 		// lsg.PrintShapeletsAndWeights();
 		lsg.SaveShapeletsToFile(dir + ds + sp    
-				+ ds + "_LearnedShapelets");
+				+ ds + "_Diverse_LearnedShapelets");
 		
 	}
 
