@@ -135,10 +135,10 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		// set the total number of shapelets per scale as a rule of thumb 
 		// to the logarithm of the total segments
-		if( K == 50) {
+		if( K == 1) {
 			K = (int) Math.log(totalSegments) * (C-1)/2; 
 		}
-		else if (K == 100) {
+		else if (K == 0) {
 			K = (int) Math.log(totalSegments) * (C-1);
 		}
 		lambdaS1 =lambdaS1/((double)K*K*R); // ********************
@@ -762,17 +762,16 @@ public class LearnShapeletsGeneralizedDiverse
 		long startTime = System.currentTimeMillis();
 		
 		String dir = "UCR_TS_Archive_2015\\";
-		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
-				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
-				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
-				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
-				"wafer","WordsSynonyms","yoga"};
-//		String[] dsAll = {"TwoLeadECG"};
+//		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
+//				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
+//				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
+//				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
+//				"wafer","WordsSynonyms","yoga"};
+		String[] dsAll = {"TwoLeadECG"};
 		
 		String sp = File.separator;
 		
 		for (String ds : dsAll) {
-			
 			String trainSetPath = dir + ds + sp + ds + "_TRAIN";
 			String testSetPath = dir + ds + sp + ds + "_TEST";
 			// load dataset
@@ -796,11 +795,6 @@ public class LearnShapeletsGeneralizedDiverse
 
 	        LearnShapeletsGeneralizedDiverse lsg = new LearnShapeletsGeneralizedDiverse();   
 	        // initialize the sizes of data structures
-	        
-	        if (trainSet.GetNumInstances() > 100) {
-				continue;
-			}
-	        System.out.println("**************** " + ds + " ******************");
 	        lsg.ITrain = trainSet.GetNumInstances();  
 	        lsg.ITest = testSet.GetNumInstances();
 	        lsg.Q = T.getDimColumns();
@@ -814,38 +808,46 @@ public class LearnShapeletsGeneralizedDiverse
 	        int R = 3;
 	        double eta = 0.1;
 	        double alpha = -50;
-	        double L = 0.1;
+	        double L = 0.2;
 	        double lambdaW = 0.01;
-	        int K = 50; // 50: use half; 100: use full.
+	        int K = 1; // 1: use half; 0: use full.
+	        double lambdaS1 = 0.001;
+	        // ******************************************************
+	        // ******************************************************
 	        
-	        double[] lambdaS1All = {0.01,0.001,0};
-	        double[] errorRate = new double[4];
-	        double lambdaS1;
+	        // set the learn rate and the number of iterations
+	        lsg.maxIter = maxEpochs;
+	        // set te number of patterns
+	        lsg.K = K; // **********************************
+	        lsg.L_min = (int)(L*T.getDimColumns());
+	        lsg.R = R;
+	        // set the regularization parameter
+	        lsg.lambdaW = lambdaW;  
+	        lsg.lambdaS1 = lambdaS1; // **************************************************************
+	        lsg.eta = eta;  
+	        lsg.alpha = alpha; 
+	        trainSet.ReadNominalTargets();
+	        lsg.nominalLabels =  new ArrayList<Double>(trainSet.nominalLabels);
 	        
-	        for (int i = 0; i<lambdaS1All.length;i++) {
-	        	
-	        	lambdaS1 = lambdaS1All[i];
-	        	// set the learn rate and the number of iterations
-		        lsg.maxIter = maxEpochs;
-		        // set the number of patterns
-		        lsg.K = K; // **********************************
-		        lsg.L_min = (int)(L*T.getDimColumns());
-		        lsg.R = R;
-		        // set the regularization parameter
-		        lsg.lambdaW = lambdaW;  
-		        lsg.lambdaS1 = lambdaS1; // **************************************************************
-		        lsg.eta = eta;  
-		        lsg.alpha = alpha; 
-		        trainSet.ReadNominalTargets();
-		        lsg.nominalLabels =  new ArrayList<Double>(trainSet.nominalLabels);
-		        
-		        // learn the model
-		        lsg.Learn(); 
-		        
-		        // learn the local convolutions
-		        
-		        long endTime = System.currentTimeMillis(); 
-		        double testResult = lsg.GetMCRTestSet();
+	        // learn the model
+	        lsg.Learn(); 
+	        
+	        // learn the local convolutions
+	        
+	        long endTime = System.currentTimeMillis(); 
+	        double testResult = lsg.GetMCRTestSet();
+			System.out.println( 
+					String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
+					+ "L=" + L	+ " " 
+					+ "R=" + R	+ " " 
+					+ "lW=" + lambdaW + " "
+					+ "alpha=" + alpha + " " 
+					+ "eta=" + eta + " " 
+					+ "maxEpochs="+ maxEpochs + " " 
+					+ "time="+ (endTime-startTime) 
+					); 
+			while (testResult>=1) {
+				lsg.Learn();
 				System.out.println( 
 						String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
 						+ "L=" + L	+ " " 
@@ -856,52 +858,28 @@ public class LearnShapeletsGeneralizedDiverse
 						+ "maxEpochs="+ maxEpochs + " " 
 						+ "time="+ (endTime-startTime) 
 						); 
-				while (testResult>=1) {
-					lsg.Learn();
-					System.out.println( 
-							String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-							+ "L=" + L	+ " " 
-							+ "R=" + R	+ " " 
-							+ "lW=" + lambdaW + " "
-							+ "alpha=" + alpha + " " 
-							+ "eta=" + eta + " " 
-							+ "maxEpochs="+ maxEpochs + " " 
-							+ "time="+ (endTime-startTime) 
-							); 
-					testResult = lsg.GetMCRTestSet();
-				}
-				new File(dir + ds + sp    
-						+ ds + "_Diverse" + "_results");
-				
-				PrintWriter writer = new PrintWriter(dir + ds + sp    
-						+ ds + "_Diverse" + "_results");
-				
-				writer.println( 
-						String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
-						+ "L=" + L	+ " " 
-						+ "R=" + R	+ " " 
-						+ "lW=" + lambdaW + " "
-						+ "alpha=" + alpha + " " 
-						+ "eta=" + eta + " " 
-						+ "maxEpochs="+ maxEpochs + " " 
-						+ "time="+ (endTime-startTime) 
-						); 
-				writer.close();
-				errorRate[i] = lsg.GetMCRTestSet();
-				// lsg.PrintShapeletsAndWeights();
-				lsg.SaveShapeletsToFile(dir + ds + sp    
-						+ ds + "_Diverse_LearnedShapelets");
-				
+				testResult = lsg.GetMCRTestSet();
 			}
-	        new File(dir + "0Result" + sp + ds);
+			new File(dir + ds + sp    
+					+ ds + "_Diverse" + "_results");
 			
-			PrintWriter writer = new PrintWriter(dir + "0Result" + sp + ds);
+			PrintWriter writer = new PrintWriter(dir + ds + sp    
+					+ ds + "_Diverse" + "_results");
 			
-			for (int j = 0; j < errorRate.length-1; j++) {
-				writer.print(errorRate[j]+",");
-			}
-			writer.println(errorRate[errorRate.length-1]);
+			writer.println( 
+					String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
+					+ "L=" + L	+ " " 
+					+ "R=" + R	+ " " 
+					+ "lW=" + lambdaW + " "
+					+ "alpha=" + alpha + " " 
+					+ "eta=" + eta + " " 
+					+ "maxEpochs="+ maxEpochs + " " 
+					+ "time="+ (endTime-startTime) 
+					); 
 			writer.close();
+			// lsg.PrintShapeletsAndWeights();
+			lsg.SaveShapeletsToFile(dir + ds + sp    
+					+ ds + "_Diverse_LearnedShapelets");
 			
 		}
 		

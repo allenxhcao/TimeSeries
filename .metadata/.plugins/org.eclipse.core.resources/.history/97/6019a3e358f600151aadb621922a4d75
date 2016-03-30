@@ -762,12 +762,12 @@ public class LearnShapeletsGeneralizedDiverse
 		long startTime = System.currentTimeMillis();
 		
 		String dir = "UCR_TS_Archive_2015\\";
-		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
-				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
-				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
-				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
-				"wafer","WordsSynonyms","yoga"};
-//		String[] dsAll = {"TwoLeadECG"};
+//		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
+//				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
+//				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
+//				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
+//				"wafer","WordsSynonyms","yoga"};
+		String[] dsAll = {"TwoLeadECG"};
 		
 		String sp = File.separator;
 		
@@ -818,7 +818,7 @@ public class LearnShapeletsGeneralizedDiverse
 	        double lambdaW = 0.01;
 	        int K = 50; // 50: use half; 100: use full.
 	        
-	        double[] lambdaS1All = {0.01,0.001,0};
+	        double[] lambdaS1All = {1,0.1,0.01,0.001};
 	        double[] errorRate = new double[4];
 	        double lambdaS1;
 	        

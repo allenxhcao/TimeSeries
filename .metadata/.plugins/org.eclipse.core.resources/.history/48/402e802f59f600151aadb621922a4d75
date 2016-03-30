@@ -818,7 +818,7 @@ public class LearnShapeletsGeneralizedDiverse
 	        double lambdaW = 0.01;
 	        int K = 50; // 50: use half; 100: use full.
 	        
-	        double[] lambdaS1All = {0.01,0.001,0};
+	        double[] lambdaS1All = {1,0.1,0.01,0.001};
 	        double[] errorRate = new double[4];
 	        double lambdaS1;
 	        

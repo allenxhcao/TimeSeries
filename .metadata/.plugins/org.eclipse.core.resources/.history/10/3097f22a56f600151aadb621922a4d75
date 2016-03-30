@@ -135,10 +135,10 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		// set the total number of shapelets per scale as a rule of thumb 
 		// to the logarithm of the total segments
-		if( K == 50) {
+		if( K == 1) {
 			K = (int) Math.log(totalSegments) * (C-1)/2; 
 		}
-		else if (K == 100) {
+		else if (K == 0) {
 			K = (int) Math.log(totalSegments) * (C-1);
 		}
 		lambdaS1 =lambdaS1/((double)K*K*R); // ********************
@@ -762,17 +762,16 @@ public class LearnShapeletsGeneralizedDiverse
 		long startTime = System.currentTimeMillis();
 		
 		String dir = "UCR_TS_Archive_2015\\";
-		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
-				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
-				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
-				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
-				"wafer","WordsSynonyms","yoga"};
-//		String[] dsAll = {"TwoLeadECG"};
+//		String[] dsAll = {"50words","Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
+//				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
+//				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
+//				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
+//				"wafer","WordsSynonyms","yoga"};
+		String[] dsAll = {"TwoLeadECG"};
 		
 		String sp = File.separator;
 		
 		for (String ds : dsAll) {
-			
 			String trainSetPath = dir + ds + sp + ds + "_TRAIN";
 			String testSetPath = dir + ds + sp + ds + "_TEST";
 			// load dataset
@@ -796,11 +795,6 @@ public class LearnShapeletsGeneralizedDiverse
 
 	        LearnShapeletsGeneralizedDiverse lsg = new LearnShapeletsGeneralizedDiverse();   
 	        // initialize the sizes of data structures
-	        
-	        if (trainSet.GetNumInstances() > 100) {
-				continue;
-			}
-	        System.out.println("**************** " + ds + " ******************");
 	        lsg.ITrain = trainSet.GetNumInstances();  
 	        lsg.ITest = testSet.GetNumInstances();
 	        lsg.Q = T.getDimColumns();
@@ -816,9 +810,9 @@ public class LearnShapeletsGeneralizedDiverse
 	        double alpha = -50;
 	        double L = 0.1;
 	        double lambdaW = 0.01;
-	        int K = 50; // 50: use half; 100: use full.
+	        int K = 1; // 1: use half; 0: use full.
 	        
-	        double[] lambdaS1All = {0.01,0.001,0};
+	        double[] lambdaS1All = {1,0.1,0.01,0.001};
 	        double[] errorRate = new double[4];
 	        double lambdaS1;
 	        
@@ -897,10 +891,10 @@ public class LearnShapeletsGeneralizedDiverse
 			
 			PrintWriter writer = new PrintWriter(dir + "0Result" + sp + ds);
 			
-			for (int j = 0; j < errorRate.length-1; j++) {
-				writer.print(errorRate[j]+",");
+			for (int j = 0; j < errorRate.length; j++) {
+				writer.print(errorRate[j]);
 			}
-			writer.println(errorRate[errorRate.length-1]);
+			writer.println();
 			writer.close();
 			
 		}
