@@ -656,7 +656,11 @@ public class LearnShapeletsGeneralizedAdagrad
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
+<<<<<<< HEAD
 			ds = "TwoLeadECG"; 
+=======
+			ds = "FaceFour"; 
+>>>>>>> origin/master
 
 			String sp = File.separator; 
 		
@@ -668,16 +672,27 @@ public class LearnShapeletsGeneralizedAdagrad
  				
 				"alpha=-50",
 				"eta=0.1",
+<<<<<<< HEAD
 				"maxEpochs=1000",
 				"K=-1",		
 				"L=0.2", 
 				"R=2", 
+=======
+				"maxEpochs=600",
+				"K=-1",		
+				"L=0.1", 
+				"R=3", 
+>>>>>>> origin/master
 				"lambdaW=0.01" 
 				};
 			
 		}	
 		String dir = "UCR_TS_Archive_2015\\",
+<<<<<<< HEAD
 				ds = "TwoLeadECG"; 
+=======
+				ds = "FaceFour"; 
+>>>>>>> origin/master
 		String sp = File.separator; 
 
 		// values of hyperparameters
@@ -806,7 +821,11 @@ public class LearnShapeletsGeneralizedAdagrad
 				+ "time="+ (endTime-startTime) 
 				); 
 		writer.close();
+<<<<<<< HEAD
 		// lsg.PrintShapeletsAndWeights();
+=======
+		lsg.PrintShapeletsAndWeights();
+>>>>>>> origin/master
 		lsg.SaveShapeletsToFile(dir + ds + sp    
 				+ ds + "_LearnedShapelets");
 		

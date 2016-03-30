@@ -135,6 +135,7 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		// set the total number of shapelets per scale as a rule of thumb 
 		// to the logarithm of the total segments
+<<<<<<< HEAD
 		if( K == 50) {
 			K = (int) Math.log(totalSegments) * (C-1)/2; 
 		}
@@ -142,6 +143,18 @@ public class LearnShapeletsGeneralizedDiverse
 			K = (int) Math.log(totalSegments) * (C-1);
 		}
 		lambdaS1 =lambdaS1/((double)K*K*R); // ********************
+=======
+		if( K < 0) {
+			K = (int) Math.log(totalSegments) * (C-1)/2; 
+			lambdaS1 = 1.0/((double)K*K*R); // ********************
+//			lambdaS1 = 0.0;
+		}
+		
+		
+		
+//		if (lambdaS1 > 0) 
+//			K = (int) K/2; // ************************************************************
+>>>>>>> origin/master
 		
 		
 		Logging.println("ITrain="+ITrain + ", ITest="+ITest + ", Q="+Q + ", Classes="+C, LogLevel.DEBUGGING_LOG);
@@ -495,9 +508,14 @@ public class LearnShapeletsGeneralizedDiverse
 								for(int j = 0; j < J[r]; j++)
 									tmp2 += E[i][r][k][j]*(1 + alpha*(D[i][r][k][j] - M[i][r][k]))*(Shapelets[r][k][l] - T.get(i, j+l));
 								
+<<<<<<< HEAD
 								//gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(K*Shapelets[r][k][l]-intraShapeletSum[r][l]);
 								gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(-intraShapeletSum[r][l]);
 								// gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2;
+=======
+								gradS_rkl =  dLdY*W[c][r][k]*tmp1*tmp2 - 2/((double) L[r]) * lambdaS1*(K*Shapelets[r][k][l]-intraShapeletSum[r][l]);
+								
+>>>>>>> origin/master
 								// add the gradient to the history
 								GradHistShapelets[r][k][l] += gradS_rkl*gradS_rkl;
 								
@@ -695,6 +713,7 @@ public class LearnShapeletsGeneralizedDiverse
 	{
 		// in case ones wants to run it from an IDE like eclipse 
 		// then the command line parameters can be set as
+<<<<<<< HEAD
 //		if (args.length == 0) {
 //			//String dir = "E:\\Data\\classification\\timeseries\\",
 //			String dir = "UCR_TS_Archive_2015\\",
@@ -904,6 +923,167 @@ public class LearnShapeletsGeneralizedDiverse
 			writer.close();
 			
 		}
+=======
+		if (args.length == 0) {
+			//String dir = "E:\\Data\\classification\\timeseries\\",
+			String dir = "UCR_TS_Archive_2015\\",
+			ds = "TwoLeadECG"; 
+
+			String sp = File.separator; 
+		
+			args = new String[] {  
+				"trainSet=" + dir + ds + sp    
+						+ ds + "_TRAIN",  
+				"testSet=" + dir + ds + sp
+						+ ds + "_TEST",  
+ 				
+				"alpha=-50",
+				"eta=0.01",
+				"maxEpochs=1000",
+				"K=-1",		
+				"L=0.1", 
+				"R=3", 
+				"lambdaW=0.01" 
+				};
+			
+		}	
+		String dir = "UCR_TS_Archive_2015\\",
+				ds = "Beef"; 
+		String sp = File.separator; 
+
+		// values of hyperparameters
+		double eta = -1, lambdaW = -1, alpha = -1, L = -1, K = -1;
+		int maxEpochs = -1, R = -1;
+		String trainSetPath = "", testSetPath = "";
+		
+		// read and parse parameters
+		for (String arg : args) {
+			String[] argTokens = arg.split("=");
+			
+			if (argTokens[0].compareTo("eta") == 0) 
+				eta = Double.parseDouble(argTokens[1]);
+			else if (argTokens[0].compareTo("lambdaW") == 0)
+				lambdaW = Double.parseDouble(argTokens[1]);
+			else if (argTokens[0].compareTo("alpha") == 0)
+				alpha = Integer.parseInt(argTokens[1]); 
+			else if (argTokens[0].compareTo("maxEpochs") == 0)
+				maxEpochs = Integer.parseInt(argTokens[1]);
+			else if (argTokens[0].compareTo("R") == 0)
+				R = Integer.parseInt(argTokens[1]);
+			else if (argTokens[0].compareTo("L") == 0)
+				L = Double.parseDouble(argTokens[1]);
+			else if (argTokens[0].compareTo("K") == 0)
+				K = Double.parseDouble(argTokens[1]);
+			else if (argTokens[0].compareTo("trainSet") == 0)
+				trainSetPath = argTokens[1];
+			else if (argTokens[0].compareTo("testSet") == 0)
+				testSetPath = argTokens[1];
+		}
+		
+		
+		// set predefined parameters if none set
+		if(R < 0) R = 4;
+		if(L < 0) L = 0.15;
+		if(eta < 0) eta = 0.01;
+		if(alpha > 0) alpha = -30;
+		if(maxEpochs < 0) maxEpochs = 10000;
+		
+		long startTime = System.currentTimeMillis();
+		 
+		// load dataset
+		DataSet trainSet = new DataSet();
+		trainSet.LoadDataSetFile(new File(trainSetPath));
+		DataSet testSet = new DataSet();
+		testSet.LoadDataSetFile(new File(testSetPath));
+
+		// normalize the data instance
+		trainSet.NormalizeDatasetInstances();
+		testSet.NormalizeDatasetInstances();
+		
+		// predictor variables T
+		Matrix T = new Matrix();
+        T.LoadDatasetFeatures(trainSet, false);
+        T.LoadDatasetFeatures(testSet, true);
+        // outcome variable O
+        Matrix O = new Matrix();
+        O.LoadDatasetLabels(trainSet, false);
+        O.LoadDatasetLabels(testSet, true);
+
+        LearnShapeletsGeneralizedDiverse lsg = new LearnShapeletsGeneralizedDiverse();   
+        // initialize the sizes of data structures
+        lsg.ITrain = trainSet.GetNumInstances();  
+        lsg.ITest = testSet.GetNumInstances();
+        lsg.Q = T.getDimColumns();
+        // set the time series and labels
+        lsg.T = T;
+        lsg.Y = O;
+        // set the learn rate and the number of iterations
+        lsg.maxIter = maxEpochs;
+        // set te number of patterns
+        lsg.K = (int)(K*T.getDimColumns()); // **********************************
+        lsg.L_min = (int)(L*T.getDimColumns());
+        lsg.R = R;
+        // set the regularization parameter
+        lsg.lambdaW = lambdaW;  
+//        lsg.lambdaS1 = 100.0/((double) lsg.R*lsg.K*lsg.K); // **************************************************************
+        lsg.lambdaS1 = 0; // **************************************************************
+//        lsg.lambdaS1 = 1; // **************************************************************
+        lsg.eta = eta;  
+        lsg.alpha = alpha; 
+        trainSet.ReadNominalTargets();
+        lsg.nominalLabels =  new ArrayList<Double>(trainSet.nominalLabels);
+        
+        // learn the model
+        lsg.Learn(); 
+        
+        // learn the local convolutions
+        
+        long endTime = System.currentTimeMillis(); 
+        double testResult = lsg.GetMCRTestSet();
+		System.out.println( 
+				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
+				+ "L=" + L	+ " " 
+				+ "R=" + R	+ " " 
+				+ "lW=" + lambdaW + " "
+				+ "alpha=" + alpha + " " 
+				+ "eta=" + eta + " " 
+				+ "maxEpochs="+ maxEpochs + " " 
+				+ "time="+ (endTime-startTime) 
+				); 
+		while (testResult>=1) {
+			lsg.Learn();
+			System.out.println( 
+					String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
+					+ "L=" + L	+ " " 
+					+ "R=" + R	+ " " 
+					+ "lW=" + lambdaW + " "
+					+ "alpha=" + alpha + " " 
+					+ "eta=" + eta + " " 
+					+ "maxEpochs="+ maxEpochs + " " 
+					+ "time="+ (endTime-startTime) 
+					); 
+			testResult = lsg.GetMCRTestSet();
+		}
+		new File(dir + ds + sp    
+				+ ds + "_results");
+		
+		PrintWriter writer = new PrintWriter(dir + ds + sp    
+				+ ds + "_results");
+		writer.println( 
+				String.valueOf(lsg.GetMCRTestSet())  + " " + String.valueOf(lsg.GetMCRTrainSet()) + " " + String.valueOf(lsg.AccuracyLossTrainSet()) + " " 
+				+ "L=" + L	+ " " 
+				+ "R=" + R	+ " " 
+				+ "lW=" + lambdaW + " "
+				+ "alpha=" + alpha + " " 
+				+ "eta=" + eta + " " 
+				+ "maxEpochs="+ maxEpochs + " " 
+				+ "time="+ (endTime-startTime) 
+				); 
+		writer.close();
+		// lsg.PrintShapeletsAndWeights();
+		lsg.SaveShapeletsToFile(dir + ds + sp    
+				+ ds + "_LearnedShapelets");
+>>>>>>> origin/master
 		
 	}
 
