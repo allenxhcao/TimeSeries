@@ -656,7 +656,7 @@ public class LearnShapeletsGeneralizedAdagrad
 		if (args.length == 0) {
 			//String dir = "E:\\Data\\classification\\timeseries\\",
 			String dir = "UCR_TS_Archive_2015\\",
-			ds = "MIMICIII_infection_NEG_VS_shock_pos_POS_60age_1wks_2sub_difference_concatenate"; 
+			ds = "FaceFour"; 
 
 			String sp = File.separator; 
 		
@@ -677,7 +677,7 @@ public class LearnShapeletsGeneralizedAdagrad
 			
 		}	
 		String dir = "UCR_TS_Archive_2015\\",
-				ds = "MIMICIII_infection_NEG_VS_shock_pos_POS_60age_1wks_2sub_difference_concatenate"; 
+				ds = "FaceFour"; 
 		String sp = File.separator; 
 
 		// values of hyperparameters
