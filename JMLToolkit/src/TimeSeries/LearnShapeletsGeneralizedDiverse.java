@@ -761,15 +761,18 @@ public class LearnShapeletsGeneralizedDiverse
 		
 		long startTime = System.currentTimeMillis();
 		
-		String dir = "UCR_TS_Archive_2015\\";
-		String[] dsAll = {"Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
-				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
-				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
-				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
-				"wafer","WordsSynonyms","yoga"};
-//		String[] dsAll = {"TwoLeadECG"};
+		String dir = "UCR_TS_Archive_2015/";
+//		String[] dsAll = {"Adiac","CBF","ChlorineConcentration","CinC_ECG_torso","Cricket_X","Cricket_Y","Cricket_Z",
+//				"ECG200","FaceAll","FacesUCR","FISH","Gun_Point","Haptics","InlineSkate","ItalyPowerDemand","Lighting2","lighting7",
+//				"MALLAT","MedicalImages","MoteStrain","OliveOil","OSULeaf","SonyAIBORobotSurface","SonyAIBORobotSurfaceII","SwedishLeaf",
+//				"Symbols","synthetic_control","Trace","Two_Patterns","uWaveGestureLibrary_X","uWaveGestureLibrary_Y","uWaveGestureLibrary_Z",
+//				"wafer","WordsSynonyms","yoga"};
+//		String[] dsAll = {"CBF","MoteStrain","Symbols"};
+//		String[] dsAll = {"Adiac","ChlorineConcentration","CinC_ECG_torso"};
+//		String[] dsAll = {"Cricket_X","Cricket_Y","Cricket_Z"};
+		String[] dsAll = {"FaceAll","FacesUCR","FISH"};
 		
-		String sp = File.separator;
+		String sp = "/";
 		
 		for (String ds : dsAll) {
 			
@@ -797,9 +800,6 @@ public class LearnShapeletsGeneralizedDiverse
 	        LearnShapeletsGeneralizedDiverse lsg = new LearnShapeletsGeneralizedDiverse();   
 	        // initialize the sizes of data structures
 	        
-	        if (trainSet.GetNumInstances() > 100) {
-				continue;
-			}
 	        System.out.println("**************** " + ds + " ******************");
 	        lsg.ITrain = trainSet.GetNumInstances();  
 	        lsg.ITest = testSet.GetNumInstances();
@@ -821,6 +821,11 @@ public class LearnShapeletsGeneralizedDiverse
 	        double[] lambdaS1All = {1, 0.1, 0.01,0.001,0};
 	        double[] errorRate = new double[lambdaS1All.length];
 	        double lambdaS1;
+	        int L_min = (int)(L*T.getDimColumns());
+	        
+	        if (trainSet.GetNumInstances() > 300 || L_min > 300) {
+				continue;
+			}
 	        
 	        for (int i = 0; i<lambdaS1All.length;i++) {
 	        	
@@ -829,7 +834,7 @@ public class LearnShapeletsGeneralizedDiverse
 		        lsg.maxIter = maxEpochs;
 		        // set the number of patterns
 		        lsg.K = K; // **********************************
-		        lsg.L_min = (int)(L*T.getDimColumns());
+		        lsg.L_min = L_min;
 		        lsg.R = R;
 		        // set the regularization parameter
 		        lsg.lambdaW = lambdaW;  
