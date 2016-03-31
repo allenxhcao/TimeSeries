@@ -771,7 +771,7 @@ public class LearnShapeletsGeneralizedDiverse
 //		String[] dsAll = {"Adiac","ChlorineConcentration","CinC_ECG_torso"};
 //		String[] dsAll = {"Cricket_X","Cricket_Y","Cricket_Z"};
 //		String[] dsAll = {"FaceAll","FacesUCR","FISH"};
-		String[] dsAll = {"Yoga"};
+		String[] dsAll = {"OliveOil"};
 		
 		String sp = "/";
 		
@@ -813,7 +813,7 @@ public class LearnShapeletsGeneralizedDiverse
 	        // *****************************************************
 	        int maxEpochs = 1000; 
 	        int R = 3;
-	        double eta = 0.2;
+	        double eta = 0.1;
 	        double alpha = -50;
 	        double L = 0.1;
 	        double lambdaW = 0.01;
